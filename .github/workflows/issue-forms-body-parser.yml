@@ -37,10 +37,10 @@ jobs:
 
       - name: Create and Push New Branch
         run: |
-         git checkout -b second-branch
+         git checkout -b third-branch
          git add extracted-data.json
-         git add yaml-data.yml
+         git add .github/repos/repo-settings.yml
          git commit -m "Add extracted-data.json"         
-         git push --set-upstream origin second-branch
+         git push --set-upstream origin third-branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
