@@ -26,10 +26,10 @@
 const inputData = require('./issue.json');
 
   const extractedData = {
-    "repository-name": inputData["repository-name"]["text"],
-    "enable-wiki": inputData["enable-wiki"]["list"][0]["checked"],
-    "enable-projects": inputData["enable-projects"]["list"][0]["checked"],
-    "enable-issues": inputData["enable-issues"]["list"][0]["checked"]
+    "name": inputData["repository-name"]["text"],
+    "has_wiki": inputData["enable-wiki"]["list"][0]["checked"],
+    "has_projects": inputData["enable-projects"]["list"][0]["checked"],
+    "has_issues": inputData["enable-issues"]["list"][0]["checked"]
   };
   
   console.log(extractedData);

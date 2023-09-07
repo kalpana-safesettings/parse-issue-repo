@@ -11,7 +11,11 @@ jobs:
       - name: Issue Forms Body Parser
         id: parse
         uses: zentered/issue-forms-body-parser@v2.0.0
-      - run: echo '${{ steps.parse.outputs.data }}' > issue.json
-      - run: cat issue.json 
-      - run: node parse-json.js
-              
+      - run: |
+         echo '${{ steps.parse.outputs.data }}' > issue.json
+         cat issue.json 
+        id: parse-json
+      - run: node parse-json.js  
+      - run: |
+         echo '${{ steps.parse-json.outputs.data }}' > parsed-json.json 
+         cat parsed-json.json          
