@@ -26,11 +26,20 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email noreply@github.com           
+      
+      - name: Install dependencies
+        run: npm install js-yaml
+      
+      - name: Convert JSON to YAML
+        run: |
+          node json-to-yaml.js
+          cat yaml-data.yml  
 
       - name: Create and Push New Branch
         run: |
          git checkout -b test-branch
          git add extracted-data.json
+         git add yaml-data.yml
          git commit -m "Add extracted-data.json"         
          git push --set-upstream origin test-branch
         env:
