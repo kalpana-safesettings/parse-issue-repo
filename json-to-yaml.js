@@ -5,4 +5,4 @@ const jsonData = require('./extracted-data.json');
 const yamlData = yaml.dump(jsonData);
 
 // Write the extracted data to a yaml file
-fs.writeFileSync('./github/repos/repo-settings.yml', yamlData);
+fs.writeFileSync('repo-settings.yml', yamlData);

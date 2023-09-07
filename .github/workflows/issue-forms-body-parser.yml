@@ -33,14 +33,21 @@ jobs:
       - name: Convert JSON to YAML
         run: |
           node json-to-yaml.js
-          cat .github/repos/repo-settings.yml  
+          cat repo-settings.yml  
 
-      - name: Create and Push New Branch
+      - name: Create New Branch
         run: |
          git checkout -b fourth-branch
-         git add extracted-data.json
-         git add .github/repos/repo-settings.yml
-         git commit -m "Add extracted-data.json"         
+        
+      - name: Copy the file to .github/repos
+        run: cp repo-settings.yml .github/repos/   
+
+      - name: Commit and push the changes to the new branch
+        run: |
+         git add extracted-data.json     
+         git add .github/repos/repo-settings.yml    
+         git commit -m "Add json and yaml files"         
          git push --set-upstream origin fourth-branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
+       
