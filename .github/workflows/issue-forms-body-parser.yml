@@ -13,5 +13,5 @@ jobs:
         uses: zentered/issue-forms-body-parser@v2.0.0
       - run: echo '${{ steps.parse.outputs.data }}' > issue.json
       - run: cat issue.json 
-      - run: node ./parse-json.js
+      - run: node parse-json.js
               
