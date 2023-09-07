@@ -31,6 +31,8 @@ const inputData = require('./issue.json');
     "has_projects": inputData["enable-projects"]["list"][0]["checked"],
     "has_issues": inputData["enable-issues"]["list"][0]["checked"]
   };
-  
-  console.log(extractedData);
+  //return extractedData to actions
+  return extractedData;
+
+  //console.log(extractedData);
   
