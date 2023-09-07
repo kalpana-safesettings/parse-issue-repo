@@ -22,11 +22,16 @@ jobs:
          ls -la     
          cat extracted-data.json
 
+      - name: Initialize mandatory git config
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email noreply@github.com           
+
       - name: Create and Push New Branch
         run: |
          git checkout -b test-branch
          git add extracted-data.json
          git commit -m "Add extracted-data.json"         
-         git push origin test-branch
+         git push --set-upstream origin test-branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
