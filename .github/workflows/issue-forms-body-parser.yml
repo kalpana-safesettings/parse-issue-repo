@@ -37,7 +37,7 @@ jobs:
 
       - name: Create New Branch
         run: |
-         git checkout -b fourth-branch
+         git checkout -b fifth-branch
         
       - name: Copy the file to .github/repos
         run: cp repo-settings.yml .github/repos/   
@@ -47,7 +47,7 @@ jobs:
          git add extracted-data.json     
          git add .github/repos/repo-settings.yml    
          git commit -m "Add json and yaml files"         
-         git push --set-upstream origin fourth-branch
+         git push --set-upstream origin fifth-branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
        
