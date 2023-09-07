@@ -17,5 +17,6 @@ jobs:
         id: parse-json
       - run: node parse-json.js  
       - run: |
+         echo  ${{ steps.parse-json.outputs }}
          echo '${{ steps.parse-json.outputs.data }}' > parsed-json.json 
          cat parsed-json.json          
