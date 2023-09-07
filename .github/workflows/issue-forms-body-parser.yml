@@ -33,7 +33,7 @@ jobs:
       - name: Convert JSON to YAML
         run: |
           node json-to-yaml.js
-          cat repo-settings.yml  
+          cat .github/repos/repo-settings.yml  
 
       - name: Create and Push New Branch
         run: |
