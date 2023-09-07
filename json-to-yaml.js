@@ -1,13 +1,6 @@
 const yaml = require('js-yaml');
 const fs = require('fs');
-
-
-const jsonData = {
-  "name": "first-repo",
-  "has_wiki": true,
-  "has_projects": true,
-  "has_issues": false
-};
+const jsonData = require('./extracted-data.json');
 
 const yamlData = yaml.dump(jsonData);
 
