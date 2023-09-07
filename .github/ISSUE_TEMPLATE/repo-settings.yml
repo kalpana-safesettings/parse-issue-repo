@@ -44,4 +44,3 @@ body:
       description: Do you want to enable Issues for this repo?
       options:
         - label: Enable Issues
-          required: true
