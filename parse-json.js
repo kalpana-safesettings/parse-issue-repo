@@ -23,6 +23,7 @@
 //       "list": [{"checked": false, "text": "Enable Issues"}]
 //     }
 //   };
+const fs = require('fs');
 const inputData = require('./issue.json');
 
   const extractedData = {
